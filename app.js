@@ -12,8 +12,8 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // jika mengirimkan data dalam bentuk form
 
-// route
-app.use('/api', require('./routes/index.routes'));
+// routes
+app.use('/clothes', require('./routes/clothes.routes'));
 
 
 // listener
