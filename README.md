@@ -32,7 +32,7 @@ Silakan fork repository ini dan submit link repository hasil pengerjaan Anda ke 
 ## Panduan Instalasi
 1. Clone repositori ini:
     ```sh
-    git clone https://github.com/yourusername/sagara-msib-test.git
+    git clone https://github.com/krauchelli/sagara-msib-test.git
     cd sagara-msib-test
     ```
 
