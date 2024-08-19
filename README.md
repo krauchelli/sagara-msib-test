@@ -28,6 +28,11 @@ Key points
 Deliverables
 Silakan fork repository ini dan submit link repository hasil pengerjaan Anda ke https://bit.ly/study-case-backend-developer-msib
 
+## Tech Stack yang digunakan
+- Express.js
+- PostgreSQL
+- Prisma ORM
+
 ## Struktur Utama Folder
 - [**controllers**](https://github.com/krauchelli/sagara-msib-test/tree/main/controllers)  : Berisi logika yang melakukan handling terhadap request dan response.
 - [**prisma**](https://github.com/krauchelli/sagara-msib-test/tree/main/prisma)            : Berisi Skema ORM Prisma dan file migration.
@@ -69,3 +74,77 @@ Silakan fork repository ini dan submit link repository hasil pengerjaan Anda ke 
 ## Menjalankan Aplikasi
 ```sh
 npm run dev
+```
+
+## Daftar Endpoint yang digunakan
+1. Get All Clothes
+    URL: /clothes
+    Method: GET
+    Response:
+   ```json
+   [
+        {
+            "id": 1,
+            "name": "Shirt",
+            "color": "Red",
+            "size": "M",
+            "price": 100,
+            "quantity": 10
+        }
+    ]
+    ```
+
+3. Get One Clothes Item
+    URL: /clothes/:id
+    Method: GET
+    Response:
+   ```json
+   [
+        {
+            "id": 1,
+            "name": "Shirt",
+            "color": "Red",
+            "size": "M",
+            "price": 100,
+            "quantity": 10
+        }
+    ]
+    ```
+
+5. Create a New Clothes Item
+    URL: /clothes
+    Method: POST
+    Request Body:
+   ```json
+   [
+        {
+            "name": "Shirt",
+            "color": "Red",
+            "size": "M",
+            "price": 100,
+            "quantity": 10
+        }
+    ]
+    ```
+
+7. Update a Clothes Item
+    URL: /clothes/:id
+    Method: PUT
+    Request Body:
+   ```json
+   [
+        {
+            "name": "Shirt",
+            "color": "Red",
+            "size": "M",
+            "price": 100,
+            "quantity": 10
+        }
+    ]
+    ```
+
+9. Delete a Clothes Item
+    URL: /clothes/:id
+    Method: DELETE
+    Response: 204 No Content
+
