@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // jika mengirimkan data dalam bentuk form
 
 // route
-app.use('/api', require('./src/routes/index.routes'));
+app.use('/api', require('./routes/index.routes'));
 
 
 // listener
