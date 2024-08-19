@@ -60,6 +60,5 @@ Silakan fork repository ini dan submit link repository hasil pengerjaan Anda ke 
     ```
 
 ## Menjalankan Aplikasi
-    ```sh
-    npm run dev
-    ```
+```sh
+npm run dev
