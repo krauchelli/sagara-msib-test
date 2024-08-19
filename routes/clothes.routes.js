@@ -14,3 +14,5 @@ router.put('/:id', clothesController.update);
 
 // DELETE routes
 router.delete('/:id', clothesController.delete);
+
+module.exports = router;

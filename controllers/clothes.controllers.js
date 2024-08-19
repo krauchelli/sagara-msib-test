@@ -1,28 +1,50 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const clothesService = require('../services/clothes.services');
 
-// GET all clothes
 exports.getAll = async (req, res) => {
-    try {} catch (error) {}
+    try {
+        const clothes = await clothesService.getAll();
+        res.json(clothes);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-// GET one clothes
 exports.getOne = async (req, res) => {
-    try {} catch (error) {}
+    try {
+        const id = req.params.id;
+        const clothes = await clothesService.getOne(id);
+        res.json(clothes);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-// POST a new clothes
 exports.create = async (req, res) => {
-    const { name, color, size, price, quantity } = req.body;
-
+    try {
+        const { name, color, size, price, quantity } = req.body;
+        const newClothes = await clothesService.create({ name, color, size, price, quantity });
+        res.status(201).json(newClothes);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-// PUT updated data
 exports.update = async (req, res) => {
-    try {} catch (error) {}
+    try {
+        const id = req.params.id;
+        const updatedClothes = await clothesService.update(id, req.body);
+        res.json(updatedClothes);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-// DELETE data
 exports.delete = async (req, res) => {
-    try {} catch (error) {}
+    try {
+        const id = req.params.id;
+        await clothesService.delete(id);
+        res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
