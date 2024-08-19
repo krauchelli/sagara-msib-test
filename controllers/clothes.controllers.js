@@ -2,8 +2,8 @@ const clothesService = require('../services/clothes.services');
 
 exports.getAll = async (req, res) => {
     try {
-        const { color, size } = req.query;
-        const clothes = await clothesService.getAll({ color, size });
+        const { color, size, quantity, lessThanFive } = req.query;
+        const clothes = await clothesService.getAll({ color, size, quantity, lessThanFive });
         res.json(clothes);
     } catch (error) {
         res.status(500).json({ error: error.message });

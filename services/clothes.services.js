@@ -7,7 +7,10 @@ exports.getAll = async (filters) => {
         // filters
         filteredClothes = filters.color ? filteredClothes.filter(clothes => clothes.color === filters.color) : filteredClothes;
         filteredClothes = filters.size ? filteredClothes.filter(clothes => clothes.size === filters.size) : filteredClothes;
-
+        filteredClothes = filters.quantity ? filteredClothes.filter(clothes => clothes.quantity === parseInt(filters.quantity)) : filteredClothes;
+        // lessThanFive is a boolean
+        filteredClothes = filters.lessThanFive ? filteredClothes.filter(clothes => clothes.quantity < 5) : filteredClothes;
+        
         return filteredClothes;
     } catch (error) {
         throw new Error(`Terjadi Kesalahan Service: ${error.message}`);
