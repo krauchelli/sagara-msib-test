@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 const app = express();
-const host = 'localhost';
+const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 3000;
 
 // middlewares
