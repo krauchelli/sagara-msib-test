@@ -77,9 +77,9 @@ npm run dev
 ```
 
 ## Daftar Endpoint yang digunakan
-1. Get All Clothes
-    URL: /clothes
-    Method: GET
+1. Get All Clothes\
+    URL: `/clothes`\
+    Method: GET\
     Response:
    ```json
    [
@@ -94,9 +94,9 @@ npm run dev
     ]
     ```
 
-3. Get One Clothes Item
-    URL: /clothes/:id
-    Method: GET
+2. Get One Clothes Item\
+    URL: `/clothes/:id`\
+    Method: GET\
     Response:
    ```json
    [
@@ -111,9 +111,9 @@ npm run dev
     ]
     ```
 
-5. Create a New Clothes Item
-    URL: /clothes
-    Method: POST
+3. Create a New Clothes Item\
+    URL: `/clothes`\
+    Method: POST\
     Request Body:
    ```json
    [
@@ -127,9 +127,9 @@ npm run dev
     ]
     ```
 
-7. Update a Clothes Item
-    URL: /clothes/:id
-    Method: PUT
+4. Update a Clothes Item\
+    URL: `/clothes/:id`\
+    Method: PUT\
     Request Body:
    ```json
    [
@@ -143,8 +143,8 @@ npm run dev
     ]
     ```
 
-9. Delete a Clothes Item
-    URL: /clothes/:id
-    Method: DELETE
+5. Delete a Clothes Item\
+    URL: `/clothes/:id`\
+    Method: DELETE\
     Response: 204 No Content
 
