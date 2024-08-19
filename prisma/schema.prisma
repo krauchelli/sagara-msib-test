@@ -12,3 +12,23 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Clothes {
+  id          Int      @id @default(autoincrement())
+  name        String
+  color       String
+  size        ClotheSize @default(M)
+  price       Float
+  quantity    Int     @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum ClotheSize {
+  XS
+  S
+  M
+  L
+  XL
+  XXL
+}

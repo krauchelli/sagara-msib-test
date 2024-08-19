@@ -25,3 +25,7 @@ coverage/
 # Miscellaneous
 .DS_Store
 Thumbs.db
+
+#database
+prisma/migrations
+prisma/dev.db
