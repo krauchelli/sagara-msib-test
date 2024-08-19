@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const methodOverride = require('method-override');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -13,6 +12,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // jika mengirimkan data dalam bentuk form
 
 // routes
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 app.use('/clothes', require('./routes/clothes.routes'));
 
 
