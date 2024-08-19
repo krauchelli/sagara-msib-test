@@ -27,3 +27,39 @@ Key points
 
 Deliverables
 Silakan fork repository ini dan submit link repository hasil pengerjaan Anda ke https://bit.ly/study-case-backend-developer-msib
+
+
+## Panduan Instalasi
+1. Clone repositori ini:
+    ```sh
+    git clone https://github.com/yourusername/sagara-msib-test.git
+    cd sagara-msib-test
+    ```
+
+2. Install dependencies yang dibutuhkan:
+    ```sh
+    npm install
+    ```
+
+3. Set up environment variables:
+    Buat file [`.env`] dengan isi: 
+    ```env
+    HOST=localhost
+    PORT=3000
+    DATABASE_URL=[`url database`]
+    ```
+
+4. Set up Prisma:
+    ```sh
+    npx prisma generate
+    ```
+
+5. Set up Prisma Migrate: 
+    ```sh
+    npx prisma migrate dev
+    ```
+
+## Menjalankan Aplikasi
+    ```sh
+    npm run dev
+    ```
