@@ -32,7 +32,7 @@ exports.create = async (req, res) => {
 
 exports.update = async (req, res) => {
     try {
-        const id = req.params.id;
+        const { id } = req.params;
         const updatedClothes = await clothesService.update(id, req.body);
         res.json(updatedClothes);
     } catch (error) {
@@ -42,9 +42,29 @@ exports.update = async (req, res) => {
 
 exports.delete = async (req, res) => {
     try {
-        const id = req.params.id;
+        const { id } = req.params;
         await clothesService.delete(id);
         res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+exports.addStock = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updatedClothes = await clothesService.addStock(id);
+        res.json(updatedClothes);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+exports.reduceStock = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updatedClothes = await clothesService.reduceStock(id);
+        res.json(updatedClothes);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

@@ -78,3 +78,35 @@ exports.delete = async (id) => {
         throw new Error(`Terjadi Kesalahan Service: ${error.message}`);
     }
 };
+
+exports.addStock = async (id) => {
+    try {
+        const clothes = await clothesQueries.getOne(id);
+        if (!clothes) {
+            throw new Error(`Clothes with id ${id} not found`);
+        }
+        
+        clothes.quantity++;
+        return await clothesQueries.update(id, clothes);
+    } catch (error) {
+        throw new Error(`Terjadi Kesalahan Service: ${error.message}`);
+    }
+};
+
+exports.reduceStock = async (id) => {
+    try {
+        const clothes = await clothesQueries.getOne(id);
+        if (!clothes) {
+            throw new Error(`Clothes with id ${id} not found`);
+        }
+        
+        if (clothes.quantity <= 0) {
+            throw new Error('Insufficient stock');
+        }
+
+        clothes.quantity--;
+        return await clothesQueries.update(id, clothes);
+    } catch (error) {
+        throw new Error(`Terjadi Kesalahan Service: ${error.message}`);
+    }
+};

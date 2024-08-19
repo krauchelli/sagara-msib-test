@@ -11,6 +11,8 @@ router.post('/', clothesController.create);
 
 // PUT routes
 router.put('/:id', clothesController.update);
+router.put('/:id/add-stock', clothesController.addStock);
+router.put('/:id/reduce-stock', clothesController.reduceStock);
 
 // DELETE routes
 router.delete('/:id', clothesController.delete);
