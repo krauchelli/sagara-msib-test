@@ -148,3 +148,36 @@ npm run dev
     Method: DELETE\
     Response: 204 No Content
 
+6. Add Stock Clothes Item\
+    URL: `/clothes/:id/add-stock`\
+    Method: PUT\
+    Response:
+   ```json
+   [
+        {
+            "id": 1,
+            "name": "Shirt",
+            "color": "Red",
+            "size": "M",
+            "price": 100,
+            "quantity": 10
+        }
+    ]
+    ```
+
+7. Reduce Stock Clothes Item\
+    URL: `/clothes/:id/reduce-stock`\
+    Method: PUT\
+    Response:
+   ```json
+   [
+        {
+            "id": 1,
+            "name": "Shirt",
+            "color": "Red",
+            "size": "M",
+            "price": 100,
+            "quantity": 10
+        }
+    ]
+    ```
