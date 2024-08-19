@@ -1,8 +1,14 @@
 const clothesQueries = require('../queries/clothes.queries');
 
-exports.getAll = async () => {
+exports.getAll = async (filters) => {
     try {
-        return await clothesQueries.getAll();
+        const allClothes = await clothesQueries.getAll();
+        let filteredClothes = allClothes;
+        // filters
+        filteredClothes = filters.color ? filteredClothes.filter(clothes => clothes.color === filters.color) : filteredClothes;
+        filteredClothes = filters.size ? filteredClothes.filter(clothes => clothes.size === filters.size) : filteredClothes;
+
+        return filteredClothes;
     } catch (error) {
         throw new Error(`Terjadi Kesalahan Service: ${error.message}`);
     }
