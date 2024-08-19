@@ -28,6 +28,13 @@ Key points
 Deliverables
 Silakan fork repository ini dan submit link repository hasil pengerjaan Anda ke https://bit.ly/study-case-backend-developer-msib
 
+## Struktur Utama Folder
+- [**controllers**](https://github.com/krauchelli/sagara-msib-test/tree/main/controllers)  : Berisi logika yang melakukan handling terhadap request dan response.
+- [**prisma**](https://github.com/krauchelli/sagara-msib-test/tree/main/prisma)            : Berisi Skema ORM Prisma dan file migration.
+- [**queries**](https://github.com/krauchelli/sagara-msib-test/tree/main/queries)          : Berisi fungsi-fungsi kueri database.
+- [**routes**](https://github.com/krauchelli/sagara-msib-test/tree/main/routes)            : Berisi route yang didefinisikan untuk API.
+- [**services**](https://github.com/krauchelli/sagara-msib-test/tree/main/services)        : Berisi business logic dan fungsi service yang bertugas sebagai penengah antara controllers dan queries.
+
 
 ## Panduan Instalasi
 1. Clone repositori ini:
